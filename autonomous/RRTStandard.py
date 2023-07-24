@@ -10,8 +10,6 @@ class RRTStandard():
 
     def __init__(self, departure, destination, obstacles, safeRadius, maxIterations=200):
 
-        self.nodeCount = 1
-
         self.departure = departure
         self.departureNode = TreeNode(departure[0], departure[1])
         self.randomTree = self.departureNode
