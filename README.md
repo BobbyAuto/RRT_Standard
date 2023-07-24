@@ -12,7 +12,11 @@ In this project, I aimed to apply the standard RRT algorithm to solve the obstac
 
 <ul>
   <li><b>safeRadius</b>: </br>
-    Because the robot has its size, we need to define a safe radius to represent the size.</li>
-  <li><b>stepSize</b>: </br>In each iteration, the growth length of the tree.</li>
-  <li><b>targetRadius</b>: </br>When a tree is growing and the distance between one node and the destination point is less than the value of targetRadius, we believe that the RRT tree has discovered a feasible path.</li>
+    Because the robot has its size, we need to define a safe radius to represent the size. In this project, the value of safeRadius is 5.</li>
+  <li><b>stepSize</b>: </br>In each iteration, the growth length of the tree. In this project, the value of stepSize is 1.5 times of the value of safeRadius.</li>
+  <li><b>targetRadius</b>: </br>When a tree is growing and the distance between one node and the destination point is less than the value of targetRadius, we believe that the RRT tree has discovered a feasible path. In this project, the value of targetRadius is 5 times of the value of safeRadius.</li>
 </ul>
+
+## Definition of Environment-1
+departure = (-380, -50) </br>
+destination = (400, 100)
