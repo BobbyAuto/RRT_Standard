@@ -8,6 +8,27 @@ The Rapid Exploration Random Tree (RRT) algorithm is a random sampling algorithm
 
 In this project, I aimed to apply the standard RRT algorithm to solve the obstacle avoidance problem for robots in given environments, simulate the standard RRT algorithm and observe the performance, and then optimize the standard RRT algorithm with an adaptive lead point method and compare the performance between them in different environments.
 
+## The Process of Standard RRT
+<ol>
+  <li>Departure point as a seed, begins to grow branches;</li>
+  <li>Randomly generate a lead point P in the search space;</li>
+  <li>Find the closest point to P on the tree and mark it as C;</li>
+  <li>Grow a step size in the direction of P if there are no obstacles to collision. If there is an obstacle to collision then repeat the process from steps 2-4;</li>
+</ol>
+<img src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Standard%20RRT%20Process.png"/>
+
+## The Process of Standard RRT with an adaptive lead point
+In the standard RRT algorithm, the lead point P was randomly generated, which enables the tree to explore the search space more. 
+
+```python
+rand = random.random()
+if rand < 0.5:
+    x, y = self.destination
+  else:
+    x = np.random.uniform(self.searchSpace['min_right'], self.searchSpace['max_left'])
+    y = np.random.uniform(self.searchSpace['max_down'], self.searchSpace['min_top'])
+return (x, y)
+```
 ## Definition of Key Parameters
 
 <ul>
@@ -18,5 +39,10 @@ In this project, I aimed to apply the standard RRT algorithm to solve the obstac
 </ul>
 
 ## Definition of Environment-1
-departure = (-380, -50) </br>
-destination = (400, 100)
+departure = (-380, -50) was represented by the blue dot on the below environment map</br>
+destination = (400, 100) was represented by the red dot on the below environment map.
+
+<img src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Environment-1.png"/>
+
+## Experiment-RRT Standard
+<img src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Standard.png"/>
