@@ -40,7 +40,8 @@ return (x, y)
 
 ## Definition of Environment-1
 departure = (-380, -50) was represented by the blue dot on the below environment map</br>
-destination = (400, 100) was represented by the red dot on the below environment map.
+destination = (400, 100) was represented by the red dot on the below environment map.</br></br>
+Note that, the unit of the X-axis is meters.
 
 <img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Environment-1.png"/>
 
@@ -51,3 +52,8 @@ destination = (400, 100) was represented by the red dot on the below environment
 <img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Adaptive.png"/> 
 
 ## Performance Comparision
+In this section, with the same environment filled same obstacles which was shown in the previous section and parameters setting, we will run this algorithm 20 times respectively and compare their performance by measuring the time consumed in finding a feasible path. The result was shown below:
+
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Performance%20Comparision.png"/> 
+
+By observing the above diagram, we can see the method with an adaptive lead point is acting performance around average four times higher than the standard RRT algorithm.
