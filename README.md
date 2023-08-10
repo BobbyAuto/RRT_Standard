@@ -46,3 +46,8 @@ destination = (400, 100) was represented by the red dot on the below environment
 
 ## Experiment-RRT Standard
 <img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Standard.png"/>
+
+## Experiment-RRT Standard with an adaptive lead point
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Adaptive.png"/> 
+
+## Performance Comparision
