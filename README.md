@@ -15,10 +15,10 @@ In this project, I aimed to apply the standard RRT algorithm to solve the obstac
   <li>Find the closest point to P on the tree and mark it as C;</li>
   <li>Grow a step size in the direction of P if there are no obstacles to collision. If there is an obstacle to collision then repeat the process from steps 2-4;</li>
 </ol>
-<img src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Standard%20RRT%20Process.png"/>
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Standard%20RRT%20Process.png"/>
 
 ## The Process of Standard RRT with an adaptive lead point
-In the standard RRT algorithm, the lead point P was randomly generated, which enables the tree to explore the search space more. 
+In the standard RRT algorithm, the lead point P was randomly generated, which enables the tree to explore the search space more. The strategy of this method is to set the lead point to the destination point with a 50% of possibility which enables the tree more targeted to grow towards the destination point. Therefore, theoretically, it has a higher performance of finding a feasible path to the destination.
 
 ```python
 rand = random.random()
@@ -42,7 +42,7 @@ return (x, y)
 departure = (-380, -50) was represented by the blue dot on the below environment map</br>
 destination = (400, 100) was represented by the red dot on the below environment map.
 
-<img src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Environment-1.png"/>
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Environment-1.png"/>
 
 ## Experiment-RRT Standard
-<img src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Standard.png"/>
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Standard.png"/>
