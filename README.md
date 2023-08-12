@@ -6,7 +6,7 @@
 ## Introduction
 The Rapid Exploration Random Tree (RRT) algorithm is a random sampling algorithm for state space, which avoids the large computational burden caused by precise modeling of space by detecting collisions at sampling points. It can effectively solve path-planning problems in high-dimensional spaces and complex constraints. This method is probability complete and non-optimal. It can easily handle obstacles and differential constraints and is widely used in the area of autonomous robot path planning.
 
-In this project, I aimed to apply the standard RRT algorithm to solve the obstacle avoidance problem for robots in given environments, simulate the standard RRT algorithm and observe the performance, and then optimize the standard RRT algorithm with an adaptive lead point method and compare the performance between them in different environments.
+In this project, I aimed to apply the standard RRT algorithm and the standard RRT algorithm with an adaptive lead point method to solve the obstacle avoidance problem for robots in given environments, simulate them and observe and compare the performance between them in different environments.
 
 ## The Process of Standard RRT
 <ol>
@@ -76,3 +76,4 @@ With this environment and the same parameters set, we again will run this algori
 <b>Surprisingly, we obtained completely opposite results！！</b>
 
 ## Conclusion
+The standard RRT algorithm with an adaptive lead point method is not always more effective than the standard RRT algorithm, it totally depends on the environment and the situation you are facing. Concluded from the experiments, normally when the obstacles are more discrete in an environment, The standard RRT algorithm with an adaptive lead point method is more effective than the Standard RRT algorithm.
