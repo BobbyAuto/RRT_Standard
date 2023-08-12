@@ -68,4 +68,11 @@ In this type of environment, the generated tree and the feasible walking path wi
 <img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Standard-2.png"/>
 <img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Adaptive-2.png"/>
 
-With this environment and the same parameters set, we will run this algorithm 20 times respectively and compare their performance by measuring the time consumed in finding a feasible path. The result was shown below:
+
+With this environment and the same parameters set, we again will run this algorithm 20 times respectively and compare their performance by measuring the time consumed in finding a feasible path. The result was shown below:
+
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Performance Comparision-2.png"/>
+
+<b>Surprisingly, we obtained completely opposite results！！</b>
+
+## Conclusion
