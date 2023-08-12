@@ -57,3 +57,15 @@ In this section, with the same environment filled same obstacles which was shown
 <img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Performance%20Comparision.png"/> 
 
 By observing the above diagram, we can see the method with an adaptive lead point is acting performance around average four times higher than the standard RRT algorithm.
+#### One More Experiment in Another Environment
+departure = (0, -25) was represented by the blue dot on the below environment map</br>
+destination = (300, 105) was represented by the red dot on the below environment map.</br></br>
+
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Environment-2.png"/>
+
+In this type of environment, the generated tree and the feasible walking path will look like below:
+
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Standard-2.png"/>
+<img width=80%; src="https://github.com/BobbyAuto/RRT_Standard/blob/main/images/Result_Adaptive-2.png"/>
+
+With this environment and the same parameters set, we will run this algorithm 20 times respectively and compare their performance by measuring the time consumed in finding a feasible path. The result was shown below:
