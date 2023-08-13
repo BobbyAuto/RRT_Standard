@@ -91,7 +91,7 @@ def generate_obstacles(numbers=1):
     return obs_list
 
 
-file_name = "ObsMap/obstacles.pickle"
+file_name = "autonomous/ObsMap/obstacles.pickle"
 
 
 def save_obstacles(obstacles):
