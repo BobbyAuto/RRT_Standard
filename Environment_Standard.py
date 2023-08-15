@@ -12,7 +12,7 @@ departure = (-380, -50)
 destination = (400, 100)
 
 # departure = (0, -25)
-# destination = (0, -65)
+# destination = (300, 105)
 
 safeRadius = 5
 
@@ -27,12 +27,12 @@ for obstacle in obstacles:
     x, y = obstacle.get_obstacle_axis()
     plt.plot(x, y, color='black')
     plt.fill(x, y, color='gray')
-
-# draw a departure and destination on map
+#
+# # draw a departure and destination on map
 plt.scatter(destination[0], destination[1], s=28, c='red')
 plt.plot(departure[0], departure[1], 'b.')
-
-# draw safety circuit around the robot
+# #
+# # # draw safety circuit around the robot
 thia = np.arange(0, 2 * np.pi, 0.01)
 x_circuit = departure[0] + safeRadius * np.cos(thia)
 y_circuit = departure[1] + safeRadius * np.sin(thia)
@@ -45,7 +45,7 @@ plt.plot([search_space['min_right'], search_space['min_right'], search_space['ma
           search_space['max_down']],
          color='green', linestyle='-.', linewidth=1, alpha=0.5)
 
-
+#
 # withAda = []
 # noAda = []
 # x = []
@@ -54,30 +54,42 @@ plt.plot([search_space['min_right'], search_space['min_right'], search_space['ma
 #     algo = RRTStandard(departure, destination, obstacles, safeRadius, maxIterations=5000)
 #     algo.grow_motion_path(goal_adaptive=True)
 #     time2 = datetime.datetime.now()
-#     cost_withAda = (time2 - time1).total_seconds() * 1000
+#     cost_withAda = (time2 - time1).total_seconds()
 #     withAda.append(cost_withAda)
 #
 #     time3 = datetime.datetime.now()
 #     algo2 = RRTStandard(departure, destination, obstacles, safeRadius, maxIterations=5000)
 #     algo2.grow_motion_path(goal_adaptive=False)
 #     time4 = datetime.datetime.now()
-#     cost_noAda = (time4 - time3).total_seconds() * 1000
+#     cost_noAda = (time4 - time3).total_seconds()
 #     noAda.append(cost_noAda)
 #
 #     x.append(i+1)
+#     print(f"round = {i}")
 #
-# plt.plot(x, withAda, c='red')
-# plt.plot(x, noAda, c='blue')
+# x = np.array(x)
+# withAda = np.array(withAda)
+# noAda = np.array(noAda)
+#
+# for a,b in zip(x, withAda):
+#     ax.text(a,b,'%.0f' % b,fontdict={'fontsize':14})
+#
+# for a,b in zip(x, noAda):
+#     ax.text(a,b,'%.0f' % b,fontdict={'fontsize':14})
+#
+# plt.plot(x, withAda, 'o-', c='red', label='RRT Standard with an Adaptive Lead Point')
+# plt.plot(x, noAda, 'o-', c='blue', label='RRT Standard')
 
 
-#
+
+# #
 time1 = datetime.datetime.now()
 algo = RRTStandard(departure, destination, obstacles, safeRadius, maxIterations=5000)
 algo.NOS = 1
-algo.grow_motion_path(goal_adaptive=True)
+algo.grow_motion_path()
 time2 = datetime.datetime.now()
 print(f"time1 = {time1}, time2 = {time2}")
-print(f"the time cost on searching a path = {(time2 - time1).total_seconds() * 1000}")
+print(f"the time cost on searching a path = {(time2 - time1).total_seconds() }")
 randomTree = algo.randomTree
 
 
@@ -104,9 +116,9 @@ def visualize_paths(paths, color, alpha=1):
             solution_x = np.append(solution_x, node.locationX)
             solution_y = np.append(solution_y, node.locationY)
 
-        plt.plot(solution_x, solution_y, c=color, alpha=alpha)
+        plt.plot(solution_x, solution_y, c=color, label='RRT Standard with an Adaptive Lead Point', alpha=alpha)
 
-
+#
 visualize_tree(algo.treeNodes)
 solutionsAll = algo.get_solution_paths()
 
@@ -122,8 +134,14 @@ visualize_paths(solutionsAll, 'blue')
 # time5 = datetime.datetime.now()
 # print(f"the time cost on visualization path is {(time5 - time4).total_seconds() * 1000}")
 
-ax.set_xlabel("Xm")
-ax.set_ylabel("Ym")
+# plt.xticks(np.arange(0, 22, 1))
+# plt.xlim(0, 22)
+
+plt.legend(loc='lower right', bbox_to_anchor=(1, 1))
+# ax.set_xlabel("Rounds")
+# ax.set_ylabel("Seconds")
+# ax.set_xlabel("Meters")
+# ax.set_ylabel("Meters")
 plt.axis('equal')
 # fig.align_labels()
 plt.grid(True)
