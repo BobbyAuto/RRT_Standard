@@ -3,6 +3,18 @@
 </div>
 </br>
 
+### Programming Languages Used for This Project
+<ul>
+  <li>Python</li>
+</ul>
+
+### Libs Used under Python for This Project
+<ul>
+  <li>numpy</li>
+  <li>matplotlib</li>
+</ul>
+
+
 ## Introduction
 The Rapid Exploration Random Tree (RRT) algorithm is a random sampling algorithm for state space, which avoids the large computational burden caused by precise modeling of space by detecting collisions at sampling points. It can effectively solve path-planning problems in high-dimensional spaces and complex constraints. This method is probability complete and non-optimal. It can easily handle obstacles and differential constraints and is widely used in the area of autonomous robot path planning.
 
